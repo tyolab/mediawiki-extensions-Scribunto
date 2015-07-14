@@ -53,7 +53,7 @@ abstract class Scribunto_LuaEngine extends ScribuntoEngineBase {
 	 * Create a new interpreter object
 	 * @return Scribunto_LuaInterpreter
 	 */
-	abstract function newInterpreter();
+	abstract protected function newInterpreter();
 
 	/**
 	 * @param string $text

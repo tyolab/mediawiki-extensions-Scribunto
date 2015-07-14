@@ -203,7 +203,7 @@ class Scribunto_LuaSandboxEngine extends Scribunto_LuaEngine {
 		return $this->lineCache['mw.lua'][$lineNum - 1];
 	}
 
-	function newInterpreter() {
+	protected function newInterpreter() {
 		return new Scribunto_LuaSandboxInterpreter( $this, $this->options );
 	}
 }

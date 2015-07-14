@@ -1,6 +1,6 @@
 <?php
 
-require_once '../LuaStandalone/LuaStandaloneEngine.php';
+require_once __DIR__ . '/../LuaStandalone/LuaStandaloneEngine.php';
 
 
 /*

@@ -1,9 +1,19 @@
 <?php
 
+require_once __DIR__ . '/../LuaStandalone/LuaStandaloneEngine.php';
+
 /*
  * this class for running the server with the lua binary
  */
-class Scribunto_LuaRemoteBinary {
+class Scribunto_LuaRemoteBinary extends Scribunto_LuaStandaloneEngine {
+	
+	protected function newInterpreter() {
+		return new Scribunto_LuaRemoteInterpreter( $this, $this->options );
+	}
+	
+}
+
+class Scribunto_LuaRemoteInterpreter extends Scribunto_LuaStandaloneInterpreter {
 	
 	/**
 	 * override parent send message because it should be encoded message already

@@ -110,7 +110,7 @@ class Scribunto_LuaStandaloneEngine extends Scribunto_LuaEngine {
 	/**
 	 * @return Scribunto_LuaStandaloneInterpreter
 	 */
-	function newInterpreter() {
+	protected function newInterpreter() {
 		return new Scribunto_LuaStandaloneInterpreter( $this, $this->options );
 	}
 
@@ -642,9 +642,9 @@ class Scribunto_LuaStandaloneInterpreter extends Scribunto_LuaInterpreter {
 		$this->checkValid();
 		proc_terminate( $this->proc );
 		$wstatus = proc_close( $this->proc );
-		$signaled = pcntl_wifsignaled( $wstatus );
-		$termsig = pcntl_wtermsig( $wstatus );
-		$exitcode = pcntl_wexitstatus( $wstatus );
+// 		$signaled = pcntl_wifsignaled( $wstatus );
+// 		$termsig = pcntl_wtermsig( $wstatus );
+// 		$exitcode = pcntl_wexitstatus( $wstatus );
 		$this->proc = false;
 		if ( $signaled ) {
 			if ( defined( 'SIGXCPU' ) && $termsig == SIGXCPU ) {
